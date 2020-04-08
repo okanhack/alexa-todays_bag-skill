@@ -1,0 +1,57 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "ja-JP": {
+          "summary": "明日の持ち物を読み上げるスキルです。",
+          "examplePhrases": [
+            "明日の持ち物を教えて",
+            "コップを登録して",
+            "ヘルプ"
+          ],
+          "keywords": [
+            "リマインダー",
+            "忘れ物",
+            "物忘れ防止",
+            "お出かけ"
+          ],
+          "name": "持ち物リスト",
+          "smallIconUri": "file://assets/images/ja-JP_smallIconUri.png",
+          "description": "登録した持ち物を読み上げるスキルです。",
+          "largeIconUri": "file://assets/images/ja-JP_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "スキルを有効にします。\nリストを登録したい物に対して、「○○を登録して」のように話しかけます。\n登録する日付を聞いてくるので、「明日」のように答えます。\n「明日の持ち物は？」と聞くと、「X月X日の持ち物は、○○です。」と答えます。\n登録した情報をクリアする場合は、「明日の持ち物を削除して」と話しかけます。\n「明日の持ち物は、○○です。削除してよろしいですか？」と聞いてくるので、「はい」と答えると、持ち物を削除できます。",
+      "category": "CALENDARS_AND_REMINDERS",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:974901238575:function:81d43929-5f70-4a42-bcfd-11f3cbb1bd45:Release_0"
+        },
+        "interfaces": []
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa:devices:all:address:country_and_postal_code:read"
+      }
+    ],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "ja-JP": {}
+      },
+      "isExportCompliant": true,
+      "containsAds": false,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}

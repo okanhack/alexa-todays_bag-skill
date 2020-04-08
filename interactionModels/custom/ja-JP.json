@@ -1,0 +1,261 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "今日のカバン",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "ItemListIntent",
+          "slots": [
+            {
+              "name": "target_date",
+              "type": "AMAZON.DATE",
+              "samples": [
+                "{target_date}",
+                "明後日",
+                "明日",
+                "今日"
+              ]
+            }
+          ],
+          "samples": [
+            "{target_date} の持ち物は",
+            "{target_date} 必要なものを教えて",
+            "{target_date} いるものを教えて",
+            "{target_date} 何がいる",
+            "{target_date} の持ち物を教えて"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CheckItemIntent",
+          "slots": [
+            {
+              "name": "day_of_week",
+              "type": "AMAZON.DayOfWeek",
+              "samples": [
+                "{day_of_week}"
+              ]
+            }
+          ],
+          "samples": [
+            "{day_of_week} に登録されているものは",
+            "{day_of_week} に何が登録されている",
+            "{day_of_week} に登録されているものを教えて",
+            "毎週 {day_of_week} の持ち物は",
+            "毎週 {day_of_week} の持ち物を教えて",
+            "毎週 {day_of_week} に登録されているものを教えて",
+            "毎週 {day_of_week} には何が登録されているの"
+          ]
+        },
+        {
+          "name": "AddIntent",
+          "slots": [
+            {
+              "name": "item",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "登録",
+            "{item} を追加して",
+            "{item} を追加",
+            "{item} を登録",
+            "{item} を登録して"
+          ]
+        },
+        {
+          "name": "SetDateIntent",
+          "slots": [
+            {
+              "name": "day_of_week",
+              "type": "AMAZON.DayOfWeek"
+            },
+            {
+              "name": "target_date",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "samples": [
+            "毎週 {day_of_week}",
+            " {day_of_week}",
+            "{target_date} "
+          ]
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "ClearIntent",
+          "slots": [
+            {
+              "name": "day_of_week",
+              "type": "AMAZON.DayOfWeek"
+            },
+            {
+              "name": "target_date",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "samples": [
+            "毎週 {day_of_week} の持ち物をからにして",
+            "{target_date} の持ち物をからにして",
+            "{day_of_week} の持ち物をからにして",
+            "毎週 {day_of_week} の持ち物をクリアして",
+            "毎週 {day_of_week} の持ち物を削除して",
+            "{target_date} の持ち物をクリアして",
+            "{target_date} の持ち物を削除して",
+            "{day_of_week} の持ち物を削除して",
+            "{day_of_week} の持ち物をクリアして"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "ItemListIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "target_date",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.543552518085.144878842480"
+              }
+            }
+          ]
+        },
+        {
+          "name": "AddIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "item",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.714208157235.817438595288"
+              }
+            }
+          ]
+        },
+        {
+          "name": "CheckItemIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "day_of_week",
+              "type": "AMAZON.DayOfWeek",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.592768096367.1308466255015"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.543552518085.144878842480",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "いつの持ち物でしょうか"
+          },
+          {
+            "type": "PlainText",
+            "value": "日付を教えてください"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.711286717958.1011859840565",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "持ち物リストに登録するものを、１つずつ教えてください"
+          },
+          {
+            "type": "PlainText",
+            "value": "何を登録しますか？一つずつ教えてください。"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.752152922122.1208949561250",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "登録するアイテムを一つずつ教えてください"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.752152922122.931333480590",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "登録する日付または曜日を教えてください。"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.714208157235.817438595288",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "登録するものを教えて下さい。"
+          },
+          {
+            "type": "PlainText",
+            "value": "何を登録しますか？"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.592768096367.1308466255015",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "「毎週金曜日」や「平日」のように教えて下さい"
+          },
+          {
+            "type": "PlainText",
+            "value": "何曜日の内容が知りたいですか？"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "53"
+}
