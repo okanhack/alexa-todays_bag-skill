@@ -3,46 +3,51 @@
     "publishingInformation": {
       "locales": {
         "ja-JP": {
-          "summary": "明日の持ち物を読み上げるスキルです。",
+          "summary": "忘れ物がないか、お出かけ前にチェックするスキルです。",
           "examplePhrases": [
-            "明日の持ち物を教えて",
-            "コップを登録して",
-            "ヘルプ"
+            "アレクサ、持ち物リストを開いて",
+            "アレクサ、コップを登録して",
+            "アレクサ、平日の持ち物を削除して"
           ],
           "keywords": [
-            "リマインダー",
             "忘れ物",
-            "物忘れ防止",
-            "お出かけ"
+            "持ち物",
+            "リマインダー",
+            "持っていくもの",
+            "幼稚園",
+            "保育園",
+            "小学校",
+            "小学生"
           ],
           "name": "持ち物リスト",
           "smallIconUri": "file://assets/images/ja-JP_smallIconUri.png",
-          "description": "登録した持ち物を読み上げるスキルです。",
+          "description": "子供が自発的に翌日の準備をすることを支援するために作りました。\n\n起動時に、登録されている持ち物を読み上げます。\n AM0~9時は当日の持ち物、AM9時以降は、翌日の持ち物を読み上げます。\n\n「4月2日の持ち物は？」\nのように呼びかけると、対象の日付の持ち物を読み上げます。\n\n登録対象の日付は、日付、曜日、平日・土日を指定できます。\n平日または土日の持ち物、曜日の持ち物、特定日の持ち物の順に読み上げます。\n\n「『着替え』を登録して」と呼びかけると、登録処置が開始します。\n「平日の持ち物を削除して」と呼びかけると、平日の持ち物が全て削除されます。\n\nお住まいの地域を登録することで、天気予報に応じた持ち物を読み上げます。\n「地域を愛知県名古屋市にセットして」と呼びかけると、以降は名古屋市がセットされます。\n天気予報は Livedoor Weather Hacks API(http://weather.livedoor.com/weather_hacks/)を使用しています。\n登録できる地域は、Weather Hacksに準じています。\nお住まいの市町村がない場合は、最寄りの地点を選択してください。",
           "largeIconUri": "file://assets/images/ja-JP_largeIconUri.png"
         }
       },
       "automaticDistribution": {
-        "isActive": false
+        "sourceLocaleForLanguages": [
+          {
+            "sourceLocale": "ja-JP",
+            "language": "ja"
+          }
+        ],
+        "isActive": true
       },
       "isAvailableWorldwide": true,
-      "testingInstructions": "スキルを有効にします。\nリストを登録したい物に対して、「○○を登録して」のように話しかけます。\n登録する日付を聞いてくるので、「明日」のように答えます。\n「明日の持ち物は？」と聞くと、「X月X日の持ち物は、○○です。」と答えます。\n登録した情報をクリアする場合は、「明日の持ち物を削除して」と話しかけます。\n「明日の持ち物は、○○です。削除してよろしいですか？」と聞いてくるので、「はい」と答えると、持ち物を削除できます。",
+      "testingInstructions": "1.アレクサでスキルを有効にする。\n2.スキルを起動して、初期起動メッセージ「ようこそ〜」が流れることを確認する。\n3.持ち物の登録を行う。 （コップを登録して→いつですか？：平日）\n4.「終了」でスキルを修了する。\n5.スキルを起動して、起動メッセージが変更されたことを確認する。「今日はX月X日X曜日です〜」\n6.平日の日付の持ち物が登録されているか確認する。「平日に何が登録されている？」「2020年4月13日の持ち物は？」「2020年4月12日の持ち物は？」\n7.持ち物を削除する（平日の持ち物を削除して→よろしいですか？はい）\n8.手順6を再度行い、持ち物が削除されていることを確認する。",
       "category": "CALENDARS_AND_REMINDERS",
       "distributionCountries": []
     },
     "apis": {
       "custom": {
         "endpoint": {
-          "uri": "arn:aws:lambda:us-east-1:974901238575:function:81d43929-5f70-4a42-bcfd-11f3cbb1bd45:Release_0"
+          "uri": "arn:aws:lambda:us-east-1:974901238575:function:ed6e66a0-5a8b-4a6c-91d8-dfdb2d5a42c0:Release_0"
         },
         "interfaces": []
       }
     },
     "manifestVersion": "1.0",
-    "permissions": [
-      {
-        "name": "alexa:devices:all:address:country_and_postal_code:read"
-      }
-    ],
     "privacyAndCompliance": {
       "allowsPurchases": false,
       "locales": {
